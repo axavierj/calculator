@@ -204,6 +204,27 @@ body {
   padding: 1rem;
   opacity: 0;
 }
+
+/*create a slid down animation for the dialog*/
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+/*create a slid up animation for the dialog*/
+@keyframes slideUp {
+  to {
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+  }
+}
 .dialog {
   margin: auto;
   padding: 1.2rem;
@@ -213,6 +234,18 @@ body {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  background-color: var(--main-background);
+  color: var(--white-text);
+}
+
+.hide {
+  animation: slideUp 0.5s ease-in-out;
+  -webkit-animation: slideUp 0.5s ease-in-out;
+}
+
+.dialog[open] {
+  animation: slideDown 0.5s;
+  -webkit-animation: slideDown 0.5s;
 }
 
 .switch {
@@ -267,10 +300,23 @@ body {
   margin-bottom: 1rem;
 }
 
+.closeBtn {
+  background-color: transparent;
+  border: none;
+  color: var(--white-text);
+}
+
 .forceSection {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
+}
+
+.forceSection > input {
+  margin-block: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  background-color: var(--screen-background);
 }
 /*end main*/
 /*add a media query for the desktop version */
