@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- link ./index.css -->
+    <link rel="stylesheet" href="index.css" />
+    <script src="./js/index.js" defer type="module"></script>
+    <title>magic calculator</title>
+  </head>
+  <body class="normal">
+    <dialog class="dialog">
+      <div class="settingsHeader">
+        settings
+        <button class="closeBtn">X</button>
+      </div>
+      <section>
+        normal
+        <label for="mode" class="toggle">
+          <div class="switch"></div>
+          <input type="checkbox" name="mode" id="mode" />
+        </label>
+        magic
+      </section>
+      <section class="forceSection">
+        <label for="force">force number</label>
+        <input type="text" name="force" id="forceNumber" />
+        <button id="saveForce">save</button>
+      </section>
+    </dialog>
+    <main class="calculator">
+      <section class="calculator__header">
+        <h3>calc</h3>
+        <div class="themeToggle">
+          <section>
+            <span class="themeNumber">1</span>
+            <span class="themeNumber">2</span>
+            <span class="themeNumber">3</span>
+          </section>
+          <form>
+            <label for="themeSelect">theme </label>
+            <div class="toggleContainer">
+              <input type="radio" name="themeSelect" id="normal" checked />
+              <input type="radio" name="themeSelect" id="light" />
+              <input type="radio" name="themeSelect" id="dark" />
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="calculator__screen">
+        <input type="text" name="calcDisplay" id="calcDisplay" readonly />
+      </section>
+      <section class="calculator__button__container">
+        <div class="calculator__button__grid">
+          <button class="calculator__buttons valueBtn" data-value="1">1</button>
+          <button class="calculator__buttons valueBtn" data-value="2">2</button>
+          <button class="calculator__buttons valueBtn" data-value="3">3</button>
+          <button class="del__button" id="delete">del</button>
+          <button class="calculator__buttons valueBtn" data-value="4">4</button>
+          <button class="calculator__buttons valueBtn" data-value="5">5</button>
+          <button class="calculator__buttons valueBtn" data-value="6">6</button>
+          <button class="calculator__buttons operationBtn" data-operation="add">
+            +
+          </button>
+          <button class="calculator__buttons valueBtn" data-value="7">7</button>
+          <button class="calculator__buttons valueBtn" data-value="8">8</button>
+          <button class="calculator__buttons valueBtn" data-value="9">9</button>
+          <button
+            class="calculator__buttons operationBtn"
+            data-operation="subtract"
+          >
+            -
+          </button>
+          <button class="calculator__buttons valueBtn" data-value=".">.</button>
+          <button class="calculator__buttons valueBtn" data-value="0">0</button>
+          <button
+            class="calculator__buttons operationBtn"
+            data-operation="divide"
+          >
+            /
+          </button>
+          <button
+            class="calculator__buttons operationBtn"
+            data-operation="multiply"
+          >
+            x
+          </button>
+        </div>
+        <div class="utility__button__grid">
+          <button class="utility__button1">reset</button>
+          <button class="utility__button2" id="resolve">=</button>
+        </div>
+        <section class="secret">
+          <button class="secretBtn">settings</button>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

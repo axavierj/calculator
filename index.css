@@ -1,0 +1,292 @@
+/*path=index.css*/
+/*language=css*/
+/*reset styles*/
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--main-background);
+}
+
+/*variables*/
+.normal {
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+  --key-background: hsl(225, 21%, 49%);
+  --key-shadow: hsl(224, 28%, 35%);
+  --util-1-background: hsl(6, 63%, 50%);
+  --util-1-shadow: hsl(6, 70%, 34%);
+  --util-2-background: hsl(30, 25%, 89%);
+  --util-2-shadow: hsl(28, 16%, 65%);
+  --dark-text: hsl(221, 14%, 31%);
+  --white-text: white;
+}
+
+.light {
+  --main-background: hsl(0, 0%, 90%);
+  --toggle-background: hsl(0, 5%, 81%);
+  --screen-background: hsl(0, 0%, 93%);
+  --key-background: hsl(185, 42%, 37%);
+  --key-shadow: hsl(185, 58%, 25%);
+  --util-1-background: hsl(25, 98%, 40%);
+  --util-1-shadow: hsl(25, 99%, 27%);
+  --util-2-background: hsl(45, 7%, 89%);
+  --util-2-shadow: hsl(35, 11%, 61%);
+  --dark-text: hsl(60, 10%, 19%);
+  --white-text: white;
+}
+
+.dark {
+  --main-background: hsl(268, 75%, 9%);
+  --toggle-background: hsl(268, 71%, 12%);
+  --screen-background: hsl(268, 71%, 12%);
+  --key-background: hsl(281, 89%, 26%);
+  --key-shadow: hsl(285, 91%, 52%);
+  --util-1-background: hsl(176, 100%, 44%);
+  --util-1-shadow: hsl(177, 92%, 70%);
+  --util-2-background: hsl(268, 47%, 21%);
+  --util-2-shadow: hsl(290, 70%, 36%);
+  --dark-text: hsl(198, 20%, 13%);
+  --white-text: white;
+}
+/*main*/
+.calculator {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.calculator__header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--white-text);
+}
+
+.themeNumber {
+  margin-left: 0.35rem;
+}
+
+.themeToggle {
+  display: flex;
+  flex-direction: column;
+}
+
+.themeToggle > section {
+  align-self: flex-end;
+}
+
+.themeToggle > form {
+  display: flex;
+  align-items: center;
+}
+
+.toggleContainer {
+  margin-left: 1rem;
+}
+
+.calculator__header > h3 {
+  font-size: 1.5rem;
+}
+
+.calculator__screen {
+  width: 100%;
+  margin-block: 1rem;
+}
+
+.calculator__screen > input {
+  background-color: var(--screen-background);
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  padding: 0.5rem;
+  color: var(--white-text);
+}
+
+.calculator__button__container {
+  background-color: var(--key-background);
+  height: 80%;
+  width: 100%;
+  padding: 1rem;
+}
+
+.calculator__button__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 65%;
+  gap: 0.5rem;
+}
+
+.calculator__button__grid > button {
+  border: none;
+  font-size: 32px;
+  font-weight: 700;
+  box-shadow: 2px 2px 4px 4px var(--key-shadow);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.utility__button__grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.calculator__buttons {
+  border: none;
+  font-size: 32px;
+  font-weight: 700;
+  background-color: var(--util-2-background);
+  box-shadow: 2px 2px 4px 4px var(--util-2-shadow);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.utility__button1,
+.del__button {
+  border: none;
+  font-size: 32px;
+  font-weight: 700;
+  background-color: var(--key-background);
+  box-shadow: 2px 2px 4px 4px var(--key-shadow);
+  color: var(--white-text);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.utility__button1 {
+  padding: 1rem;
+}
+
+.utility__button2 {
+  border: none;
+  font-size: 32px;
+  font-weight: 700;
+  background-color: var(--util-1-background);
+  box-shadow: 4px 4px 16px 3px var(--util-1-shadow);
+  color: var(--white-text);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.secret {
+  margin-top: 1rem;
+}
+
+.secretBtn {
+  padding: 1rem;
+  opacity: 0;
+}
+.dialog {
+  margin: auto;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  background-color: var(--key-background);
+  top: 1;
+  left: 0;
+  margin-left: 2px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+
+.toggle {
+  position: relative;
+  background-color: var(--screen-background);
+  padding: 0.1rem 1rem;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.toggle > input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.move {
+  transform: translateX(1.02rem);
+  -webkit-transform: translateX(1.02rem);
+  -moz-transform: translateX(1.02rem);
+  -ms-transform: translateX(1.02rem);
+  -o-transform: translateX(1.02rem);
+}
+
+.settingsHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.forceSection {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+/*end main*/
+/*add a media query for the desktop version */
+@media screen and (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .calculator {
+    width: 50%;
+  }
+}
+/*add a media query for the desktop version on screens larger than 1400px */
+@media screen and (min-width: 1400px) {
+  .calculator {
+    width: 25%;
+  }
+}
